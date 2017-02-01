@@ -4,9 +4,6 @@
 // Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
 
 function friend(friends) {
-	// Sort array of strings to alphabetical order
-	var sortedFriends = friends.sort();
-
 	// Apparently I only have friends with 4 letter names.
 	// So I'm going to add these friends to a new list called "realFriends".
 	var realFriends = [];

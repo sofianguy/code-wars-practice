@@ -13,12 +13,12 @@
 // b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
 
 function comp(array1, array2) {
-	console.log('array1 before: ', array1);
-	var newArray1 = array1.sort();
+	// console.log('array1 before: ', array1);
+	var newArray1 = array1.sort(function(a, b){return a - b});
 	console.log('array1 after: ', newArray1);
 
-	console.log('array2 before: ', array2);
-	var newArray2 = array2.sort();
+	// console.log('array2 before: ', array2);
+	var newArray2 = array2.sort(function(a, b){return a - b});
 	console.log('array2 after: ', newArray2);
 
 	if (newArray1.length !== newArray2.length) {
@@ -37,6 +37,10 @@ function comp(array1, array2) {
 	}
 }
 
-var a = [121, 144, 19, 161, 19, 144, 19, 11];
-var b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+// var a = [121, 144, 19, 161, 19, 144, 19, 11];
+// var b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+var a = [7,4,2];
+var b = [36,16,4]; 
+// b.sort() = [16,36,4] -- Because .sort() converts each item in array to a string.
+// So if the numbers are strings, "36" is smaller than "4" because 36 starts with 3.
 console.log(comp(a, b));

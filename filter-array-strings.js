@@ -18,11 +18,11 @@ function friend(friends) {
 
 	// But what if none of the names on the list are 4-letters long?
 	// #NoFriends4U #sadface
-	if (realFriends = 'undefined') {
+	if (realFriends === 'undefined') {
 		return "NoFriends4U. No 4-letter names in given list."
 	} else {
 		// But if there are 4-letter names, return new friends list 
-		return realFriends;		
+		return realFriends;
 	}
 }
 

@@ -7,11 +7,12 @@ function friend(friends) {
 	// Apparently I only have friends with 4 letter names.
 	// So I'm going to add these friends to a new list called "realFriends".
 	var realFriends = [];
+
 	// First I reject names that aren't 4 letters long. #bye
 	// Then I only add names that are 4 letters long to list realFriends. #hi
-	for (var i=0; i<sortedFriends.length; i++) {
-		if (sortedFriends[i].length === 4) {
-			realFriends.push(sortedFriends[i]);
+	for (var i=0; i<friends.length; i++) {
+		if (friends[i].length === 4) {
+			realFriends.push(friends[i]);
 		}
 	}
 

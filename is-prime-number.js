@@ -28,8 +28,6 @@ function isPrime(num) {
 		var sqNewNum = Math.round(Math.sqrt(newNum));
 		// 2. trial division every number, starting with 2, until the square root of number
 		for (var i=2; i<=sqNewNum; i++) {
-			console.log('for loop: ', i);
-			console.log('absolute number: ', newNum);
 			// 3. if a number from sq root has remainder 0 after dividing, it's prime.
 			if (newNum % i === 0) {
 				console.log(num, ' is a not a prime number.');

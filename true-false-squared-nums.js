@@ -26,15 +26,14 @@ function comp(array1, array2) {
 		return false;
 	}
 
-	for(i=0; i<=newArray1.length; i++) {
+	for(i=0; i<newArray1.length; i++) {
 		if (newArray1[i]*newArray1[i] !== newArray2[i]) {
 			console.log('ERROR: Item in array1 squared does not equal ' + 
 				'the value in corresponding item in array2');
 			return false;
-		} else {
-			return true;
 		}
 	}
+	return true;
 }
 
 // var a = [121, 144, 19, 161, 19, 144, 19, 11];

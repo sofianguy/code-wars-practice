@@ -26,9 +26,9 @@ function isPrime(num) {
 	} else {
 		// 1. get square root of number and round to whole number
 		var sqNewNum = Math.round(Math.sqrt(newNum));
-		// 2. trial division every number, starting with 2, until the square root of number
+		// 2. trial division every number, starting with 2, until the square root of num (the function's parameter)
 		for (var i=2; i<=sqNewNum; i++) {
-			// 3. if a number from sq root has remainder 0 after dividing, it's prime.
+			// 3. if a number from sq root has remainder 0 after dividing, it's not prime.
 			if (newNum % i === 0) {
 				console.log(num, ' is a not a prime number.');
 				return false;

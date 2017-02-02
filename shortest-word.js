@@ -8,16 +8,17 @@ function findShort(string) {
 	// This is the counter. Start counter with first element of array.
 	var shortestWord = arrString[0];
 
+	// Look at each word in sentence.
 	for (var i=0; i<=arrString.length-1; i++) {
-		console.log('for loop i: ', i);
-		console.log('for loop shortestWord: ', shortestWord)
-		console.log('for loop arrString[i]: ', arrString[i])
+		// Compare each array element with current shorestWord.
 		if (arrString[i].length <= shortestWord.length) {
+			// Replace shorestWord with i index's element if its 
+			// length is shorter than the current shortWord length
 			shortestWord = arrString[i];
 		}
 	}
-	console.log('end shortestword: ', shortestWord)
 
+	// Question calls for shortest word's length
 	return shortestWord.length;
 }
 

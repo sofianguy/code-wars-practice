@@ -23,6 +23,33 @@
 // ready for anything else which is not clearly specified.
 
 
+// tribonacci takes two parameters: 
+// 1. the starter sequence -- sequence
+// 2. number of length of sequence -- n
+function tribonacci(signature, n) {
+	var triSeq = signature;
+
+	// edge cases
+	if (triSeq.length > n) {
+		return triSeq.slice(0,n);
+	}
+
+	while (triSeq.length < n) {
+		// add to triSeq array the sum of the three preceding numbers in triSeq array.
+		triSeq.push(triSeq[triSeq.length - 3] + 
+			triSeq[triSeq.length - 2] + triSeq[triSeq.length -1]);
+	}
+
+	return triSeq;
+}
+
+// output should be the first n elements in new sequence array
+console.log(tribonacci([1,1,1], 10)); // [ 1, 1, 1, 3, 5, 9, 17, 31, 57, 105 ]
+console.log(tribonacci([300,200,100], 0)); // []
+console.log(tribonacci([1,1,1], 1)); // [ 1 ]
+console.log(tribonacci([12,8,7], 2)); // [ 12, 8 ]
+
+
 
 // Function takes a number parameter, which represents how many items in array.
 // Output is the fibonnaci sequence. Length of array should equal num parameter.

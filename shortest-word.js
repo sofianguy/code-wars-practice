@@ -9,7 +9,7 @@ function findShort(string) {
 	var shortestWord = arrString[0];
 
 	// Look at each word in sentence.
-	for (var i=0; i<=arrString.length-1; i++) {
+	for (var i=0; i<arrString.length; i++) {
 		// Compare each array element with current shorestWord.
 		if (arrString[i].length <= shortestWord.length) {
 			// Replace shorestWord with i index's element if its 

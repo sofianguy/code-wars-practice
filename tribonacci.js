@@ -42,7 +42,6 @@ function tribonacci(signature, n) {
 
 	return triSeq;
 }
-
 // output should be the first n elements in new sequence array
 console.log(tribonacci([1,1,1], 10)); // [ 1, 1, 1, 3, 5, 9, 17, 31, 57, 105 ]
 console.log(tribonacci([300,200,100], 0)); // []
@@ -50,7 +49,7 @@ console.log(tribonacci([1,1,1], 1)); // [ 1 ]
 console.log(tribonacci([12,8,7], 2)); // [ 12, 8 ]
 
 
-
+// ------------------------------------------------------------------------------
 // Function takes a number parameter, which represents how many items in array.
 // Output is the fibonnaci sequence. Length of array should equal num parameter.
 function fibonacciTest(num) {
@@ -65,5 +64,9 @@ function fibonacciTest(num) {
 
 	return fibList;
 }
-
 console.log(fibonacciTest(9)); // [ 0, 1, 1, 2, 3, 5, 8, 13, 21 ]
+
+
+// ------------------------------------------------------------------------------
+// 
+

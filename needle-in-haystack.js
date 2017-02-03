@@ -19,6 +19,22 @@ function findNeedle(haystack) {
 }
 
 console.log(findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk']));
-// found the needle at position 5
+// 'found the needle at position 5'
 
+// ---------------------------------------------------------------------------------------
+// OTHER SOLUTIONS:
+
+function findNeedle1(haystack) {
+	// ** array.indexOf(element) returns -1 if element not found
+	if (haystack.indexOf('needle') === -1) {
+		return 'found no needles in haystack'
+	}
+	return 'found the needle at position ' + haystack.indexOf('needle');
+}
+
+console.log(findNeedle1(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk']));
+// 'found the needle at position 5'
+
+console.log(findNeedle1(['1', '2', '3', '4']));
+// 'found no needles in haystack'
 

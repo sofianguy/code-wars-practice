@@ -43,15 +43,20 @@ function spinWords1(string) {
 
 	arrString.forEach(function(eachWord, index, arrString) {
 		if (eachWord.length >= 5) {
-			console.log('eachWord: ', eachWord, 'index: ', index)
+			// for each word in arrString, if it's length is greater than or equal to 5, 
+			// .split() each word --> turns into array
+			// .reverse() each letter in the word --> .reverse() is an array method; reverses array in place
+			// .join('') for each index in .reverse()'d array --> turns word back into string
+			// arrString[index] reassigned to reversed word string
 			arrString[index] = eachWord.split('').reverse().join('');
 		}
 	});
 
+	// turn array into one string with a space as separator
 	return arrString.join(' ');
 }
 
-console.log(spinWords1('Hey fellow warriors')); // 
+console.log(spinWords1('Hey fellow warriors')); // 'Hey wollef sroirraw'
 
 
 

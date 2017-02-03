@@ -36,5 +36,23 @@ console.log(spinWords('Hey fellow warriors')); // 'Hey wollef sroirraw'
 console.log(spinWords('This is a test')); // 'This is a test'
 console.log(spinWords('This is another test')); // 'This is rehtona test'
 
+// ---------------------------------------------------------------------------------------
+// OTHER SOLUTIONS:
+function spinWords1(string) {
+	var arrString = string.split(' ');
+
+	arrString.forEach(function(eachWord, index, arrString) {
+		if (eachWord.length >= 5) {
+			console.log('eachWord: ', eachWord, 'index: ', index)
+			arrString[index] = eachWord.split('').reverse().join('');
+		}
+	});
+
+	return arrString.join(' ');
+}
+
+console.log(spinWords1('Hey fellow warriors')); // 
+
+
 
 

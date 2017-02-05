@@ -37,7 +37,7 @@ function isValidWalk(walk) {
 		}
 	}
 
-	if (nsCount === 0 || ewCount === 0) { // starting point is (0,0)
+	if (nsCount === 0 && ewCount === 0) { // starting point is (0,0)
 		console.log('Valid walk')
 		return true;
 	} else {

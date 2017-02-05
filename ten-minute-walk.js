@@ -4,7 +4,7 @@
 // Generating App on their phones -- everytime you press the button it sends you an
 // array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']).
 // You know it takes you one minute to traverse one city block, so create a function that
-// will return true if the walk the app gives you will take you exactly ten minutes
+// will return true if the walk the app gives you a path that will take you exactly ten minutes
 // (you don't want to be early or late!) and will, of course, return you to your starting
 // point. Return false otherwise.
 // Note: you will always receive a valid array containing a random assortment of
@@ -12,8 +12,8 @@
 // array (that's not a walk, that's standing still!).
 
 function isValidWalk(walk) {
-	if (walk.length > 10) {
-		console.log('Invalid -- walk is too long.');
+	if (walk.length !== 10) {
+		console.log('Invalid -- walk is too short or too long.');
 		return false;
 	} else if (walk.length === 0) {
 		console.log('Valid walk, but you didn\'t walk anywhere.')
@@ -22,10 +22,13 @@ function isValidWalk(walk) {
 
 	var walkCount = 0;
 	for (var i=0; i<walk.length; i++) {
-		if (walk[0] === walk[i]) {
-			walkCount = walkCount + 1;
-		} else if () {
+		if (walk[i] === 'n' || walk[i] === 'e') {
 			walkCount = walkCount - 1;
+		} else if (walk[i] === 's' || walk[i] === 'w') {
+			walkCount = walkCount + 1;
+		} else {
+			console.log('Invalid walk -- contains element other than s,n,e,w');
+			return false;
 		}
 	}
 
@@ -38,4 +41,7 @@ function isValidWalk(walk) {
 	}
 }
 
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s'])); // true
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s'])); // true "valid walk"
+console.log(isValidWalk(['n','e','n','e','s','s','w','s','w','n'])); // true "valid walk"
+console.log(isValidWalk(['w'])); // false "Invalid -- walk is too short or too long."
+console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s'])); // false "doesn't return to starting point"

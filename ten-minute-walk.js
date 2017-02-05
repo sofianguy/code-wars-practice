@@ -20,19 +20,24 @@ function isValidWalk(walk) {
 		return false;
 	}
 
-	var walkCount = 0;
+	var nsCount = 0; // y axis
+	var ewCount = 0; // x axis
 	for (var i=0; i<walk.length; i++) {
-		if (walk[i] === 'n' || walk[i] === 'e') {
-			walkCount = walkCount - 1;
-		} else if (walk[i] === 's' || walk[i] === 'w') {
-			walkCount = walkCount + 1;
+		if (walk[i] === 'n') {
+			nsCount = nsCount + 1;
+		} else if (walk[i] === 'e') {
+			ewCount = ewCount + 1;
+		} else if (walk[i] === 's') {
+			nsCount = nsCount - 1;
+		} else if (walk[i] === 'w') {
+			ewCount = ewCount - 1;
 		} else {
 			console.log('Invalid walk -- contains element other than s,n,e,w');
 			return false;
 		}
 	}
 
-	if (walkCount === 0) {
+	if (nsCount === 0 || ewCount === 0) { // starting point is (0,0)
 		console.log('Valid walk')
 		return true;
 	} else {
@@ -45,3 +50,4 @@ console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s'])); // true "va
 console.log(isValidWalk(['n','e','n','e','s','s','w','s','w','n'])); // true "valid walk"
 console.log(isValidWalk(['w'])); // false "Invalid -- walk is too short or too long."
 console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s'])); // false "doesn't return to starting point"
+console.log(isValidWalk(['n','n','n','n','n','w','w','w','w','w',])); // false "doesn't return to starting point"

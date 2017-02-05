@@ -26,8 +26,12 @@ function findSenior(list) {
 	var mostSenior = [list[0]];
 
 	for (var i=1; i<list.length; i++) {
+		// Compare first object with next object. If equal value then add to new array.
+		// if there are several objects added to the new array, the value 'age' should all be the same for comparison.
 		if (list[i].age === mostSenior[0].age) {
 			mostSenior.push(list[i]);
+			// if the next object's property 'age' is larger than the new array's 'age', 
+			// replace the entire new array with an array of the object with the new largest property value 'age'
 		} else if (list[i].age > mostSenior[0].age) {
 			mostSenior = [list[i]];
 		}

@@ -40,3 +40,5 @@ String.prototype.toJadenCase = function() {
 
 "How can mirrors be real if our eyes aren't real".toJadenCase();
 // How Can Mirrors Be Real If Our Eyes Aren't Real
+['how', 'can', 'mirrors', 'be', 'real', 'if', 'our', 'eyes', 'arent'].toJadenCase();
+// TypeError: [...].toJadenCase(); is not a function

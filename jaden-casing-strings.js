@@ -36,3 +36,6 @@ String.prototype.toJadenCase = function() {
   }
   return output.join(' ');
 }
+
+"How can mirrors be real if our eyes aren't real".toJadenCase();
+// How Can Mirrors Be Real If Our Eyes Aren't Real

@@ -21,3 +21,18 @@ function toJadenCase(str) {
 }
 console.log(toJadenCase("How can mirrors be real if our eyes aren't real"));
 // How Can Mirrors Be Real If Our Eyes Aren't Real
+
+
+// ---------------------------------------------------------------------------
+String.prototype.toJadenCase = function() {
+  // this. would refer to the immediate left of .toJadenCase()
+  // example: "asdf".toJadenCase() --> this = "asdf"
+  var arrayOfWords = this.split(' ');
+  var output = [];
+  for(let word of arrayOfWords) {
+    let letters = word.split('');
+    letters[0] = letters[0].toUpperCase();
+    output.push(letters.join(''));
+  }
+  return output.join(' ');
+}

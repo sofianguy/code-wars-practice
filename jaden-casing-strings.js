@@ -30,6 +30,7 @@ String.prototype.toJadenCase = function() {
   var arrayOfWords = this.split(' ');
   var output = [];
   for(let word of arrayOfWords) {
+    // Strings are immutable, so put string-word into an array with each letter as an element.
     let letters = word.split('');
     letters[0] = letters[0].toUpperCase();
     output.push(letters.join(''));

@@ -24,13 +24,32 @@
 // 'Y' as a whole in order for Mr. Scrooge to get the desired sum.
 
 function calculateYears(principal, interest, tax, desired) {
-  // starting deposit is the principal
-  principal * (1+interest)
+  // starting deposit is the starting principal for year 1
+  // .toFixed() converts number to string
+  // parseInt() will convert string to number, but rounded number
+  // use parseFloat() instead to include decimal number
 
-  return years;
+  var interestFromPrincipal = parseFloat((principal * interest).toFixed(2));
+  var interestAfterTax = parseFloat((interestFromPrincipal - (interestFromPrincipal * tax)).toFixed(2));
+  var newPrincipal = parseFloat((principal + interestAfterTax).toFixed(2));
+  var countYears = 1;
+
+  if (desired == principal) {
+    return 0;
+  }
+
+  while (desired > newPrincipal) {
+    interestFromPrincipal = parseFloat((newPrincipal * interest).toFixed(2));
+    interestAfterTax = parseFloat((interestFromPrincipal - (interestFromPrincipal * tax)).toFixed(2));
+    newPrincipal = parseFloat((newPrincipal + interestAfterTax).toFixed(2));
+
+    countYears = countYears + 1;
+  }
+
+  return countYears;
 }
 
-console.log(calculateYears(1000.00, 0.05, 0.18, 1100.00)); //
+console.log(calculateYears(1000.00, 0.05, 0.18, 1100.00)); // 3
 
 // STEP-BY-STEP:
 // first year:

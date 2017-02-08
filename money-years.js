@@ -24,5 +24,39 @@
 // 'Y' as a whole in order for Mr. Scrooge to get the desired sum.
 
 function calculateYears(principal, interest, tax, desired) {
-  
+  // starting deposit is the principal
+  principal * (1+interest)
+
+  return years;
 }
+
+console.log(calculateYears(1000.00, 0.05, 0.18, 1100.00)); //
+
+// STEP-BY-STEP:
+// first year:
+// 1) principal plus interest: 1000 * 1.05 = 1050
+// 2) calculate tax (interest * tax rate)
+//      interest = 1000 * 0.05 = 50
+//      taxed = 50 * 0.18 = 9
+//      subtract tax from interest = 50 - 9 = 41
+// 3) add principal plus interest after tax = 1000 + 41 = 1041
+// 4) continue because not greater than 1100 desired amount
+// second year:
+// 1) remaining principal (from first year) = 1041
+// 2) principal plus interest: 1041 * 1.05 = 1093.05
+// 3) calculate tax (interest * tax rate)
+//      interest = 1041 * 0.05 = 52.05
+//      taxed = 52.05 * 0.18 = 9.369
+//      subtract tax from interest = 52.05 - 9.369 = 42.681
+// 4) add principal plus interest after tax = 1041 + 42.681 = 1083.681
+// 5) continue because not greater than 1100 desired amount
+// third year:
+// 1) remaining principal from second year = 1083.681
+// 2) principal plus interest = 1083.681 * 1.05 = 1137.865
+// 3) calculate tax (interest * tax rate)
+//      interest = 1083.681 * 0.05 = 54.184
+//      taxed = 54.184 * 0.18 = 9.753
+//      subtract tax from interest = 54.184 - 9.753 = 44.431
+// 4) add principal plus interest after tax = 1083.681 + 44.431 = 1128.112
+// 5) stop because amount is over desired amount of 1100
+// 6) count the number of years

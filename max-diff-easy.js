@@ -16,28 +16,37 @@ function getMaxOfArray(numArray) {
   return Math.max.apply(null, numArray);
 }
 
+function getMinOfArray(numArray) {
+  if (numArray.length == 0) {
+    return 0;
+  }
+  return Math.min.apply(null, numArray);
+}
+
 
 function maxDiff(numsArray) {
-  var bigNum = 0;
-  var smallNum = getMaxOfArray(numsArray);
+  // var bigNum = 0;
+  // var smallNum = getMaxOfArray(numsArray);
 
-  for (var i=0; i<numsArray.length; i++) {
-    if (numsArray[i] > bigNum) {
-      bigNum = numsArray[i];
-      console.log('bigNum: ', bigNum)
-    }
-  }
+  // for (var i=0; i<numsArray.length; i++) {
+  //   if (numsArray[i] > bigNum) {
+  //     bigNum = numsArray[i];
+  //     console.log('bigNum: ', bigNum)
+  //   }
+  // }
+  //
+  // for (var i=numsArray.length; i>0; i--) {
+  //   if (numsArray[i] < smallNum) {
+  //     smallNum = numsArray[i];
+  //     console.log('smallNum: ', smallNum);
+  //   }
+  // }
+  // console.log('end bigNum: ', bigNum);
+  // console.log('end smallNum: ', smallNum)
 
-  for (var i=0; i<numsArray.length; i++) {
-    if (numsArray[i] < smallNum) {
-      smallNum = numsArray[i];
-      console.log('smallNum: ', smallNum);
-    }
-  }
-  console.log('end bigNum: ', bigNum);
-  console.log('end smallNum: ', smallNum)
+  // return bigNum - smallNum;
 
-  return bigNum - smallNum;
+  return getMaxOfArray(numsArray) - getMinOfArray(numsArray);
 }
 
 console.log(maxDiff([])); // 0

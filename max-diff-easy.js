@@ -24,16 +24,18 @@ function getMinOfArray(numArray) {
 }
 
 
-function maxDiff(numsArray) {
+function maxDiff0(numsArray) {
   return getMaxOfArray(numsArray) - getMinOfArray(numsArray);
 }
 
-console.log(maxDiff([])); // 0
-console.log(maxDiff([16])); // 0
-console.log(maxDiff([1, 2, 3, 4])); // 4
-console.log(maxDiff([1, 2, 3, -4])); // 7
+console.log(maxDiff0([])); // 0
+console.log(maxDiff0([16])); // 0
+console.log(maxDiff0([1, 2, 3, 4])); // 4
+console.log(maxDiff0([1, 2, 3, -4])); // 7
 
+// -----------------------------------------------------------------------------
 // OTHER SOLUTIONS:
+
 function maxDiff1(numsArray) {
   var bigNum = 0;
   var smallNum = getMaxOfArray(numsArray);

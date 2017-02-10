@@ -57,6 +57,12 @@ function fibonacciTest(num) {
 	// specify here what two numbers will start the fibonnaci sequence.
 	var fibList = [0,1];
 
+	if (num === 0) {
+		return [];
+	} else if (num === 1) {
+		return [fibList[0]];
+	}
+
 	// repeat until reaches fibList length of num.
 	while (fibList.length < num) {
 		// add to fibList the sum of two preceding numbers in fibList.
@@ -66,8 +72,8 @@ function fibonacciTest(num) {
 	return fibList;
 }
 console.log(fibonacciTest(9)); // [ 0, 1, 1, 2, 3, 5, 8, 13, 21 ]
-
+console.log(fibonacciTest(2)); // [ 0, 1 ]
+console.log(fibonacciTest(1)); // [ 0 ]
+console.log(fibonacciTest(0)); // []
 
 // ------------------------------------------------------------------------------
-// 
-

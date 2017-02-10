@@ -79,3 +79,11 @@ console.log(calculateYears(1000.00, 0.05, 0.18, 1100.00)); // 3
 // 4) add principal plus interest after tax = 1083.681 + 44.431 = 1128.112
 // 5) stop because amount is over desired amount of 1100
 // 6) count the number of years
+
+// --------------------------------------------------------------------------
+// OTHER SOLUTIONS
+function calculateYears1(principal, interest, tax, desired) {
+
+}
+
+console.log(calculateYears1(1000.00, 0.05, 0.18, 1100.00)); // 

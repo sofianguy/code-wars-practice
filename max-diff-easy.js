@@ -33,7 +33,7 @@ console.log(maxDiff([16])); // 0
 console.log(maxDiff([1, 2, 3, 4])); // 4
 console.log(maxDiff([1, 2, 3, -4])); // 7
 
-
+// OTHER SOLUTIONS:
 function maxDiff1(numsArray) {
   var bigNum = 0;
   var smallNum = getMaxOfArray(numsArray);
@@ -55,4 +55,11 @@ function maxDiff1(numsArray) {
   console.log('end smallNum: ', smallNum)
 
   return bigNum - smallNum;
+}
+// maxDiff1() fails code wars tests
+
+// -----------------------------------------------------------------------------
+function maxDiff2(numsArray) {
+  if(!list.length) return 0;
+  return Math.max(...list) - Math.min(...list);
 }

@@ -61,6 +61,10 @@ function maxDiff1(numsArray) {
 // maxDiff1() fails code wars tests
 
 // -----------------------------------------------------------------------------
+
+// The ... is "spread syntax" in javascript ES2015
+// using ... on an array will destructure it and it's useful for replacing Function.prototype.apply
+// i.e., the functions getMaxOfArray() and getMinOfArray() ^^in maxDiff0()
 function maxDiff2(numsArray) {
   if(!list.length) return 0;
   return Math.max(...list) - Math.min(...list);

@@ -19,7 +19,7 @@ function max(list) {
 console.log(max([4,6,2,1,9,63,-134,566])); // 566
 
 // ------------------------------------------------------------------------
-function min(list) {
+function min1(list) {
   var mini = list[0];
   for (var i=0; i<list.length; i++) {
     if (list[i] < mini) {
@@ -28,9 +28,9 @@ function min(list) {
   }
   return mini;
 }
-console.log(min([-52, 56, 30, 29, -54, 0, -110])); // -110
+console.log(min1([-52, 56, 30, 29, -54, 0, -110])); // -110
 
-function max(list) {
+function max1(list) {
   var maxi = list[0];
   for (var i=0; i<list.length; i++) {
     if (list[i] > maxi) {
@@ -39,4 +39,4 @@ function max(list) {
   }
   return maxi;
 }
-console.log(max([4,6,2,1,9,63,-134,566])); // 566
+console.log(max1([4,6,2,1,9,63,-134,566])); // 566

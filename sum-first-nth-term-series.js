@@ -25,10 +25,8 @@ function seriesSum(n) {
   }
 
   while (series.length < n) {
-    console.log('while loop n: ', series.length);
     // formula for sequence pattern: 1/3n+1
     var temp = 1 / (3*series.length + 1);
-    console.log('temp: ', temp)
     series.push(temp);
   }
 
@@ -39,4 +37,8 @@ function seriesSum(n) {
   return sumSeries.toFixed(2);
 }
 
-console.log(seriesSum(1)); // 
+console.log(seriesSum(0)); // 0.00
+console.log(seriesSum(1)); // 1.00
+console.log(seriesSum(2)); // 1.25
+console.log(seriesSum(3)); // 1.39
+console.log(seriesSum(5)); // 1.57

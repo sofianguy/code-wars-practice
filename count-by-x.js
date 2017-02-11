@@ -19,3 +19,14 @@ function countBy(howMany, nLength) {
 }
 
 console.log(countBy(1,10)); // [1,2,3,4,5,6,7,8,9,10]
+
+// ------------------------------------------------------------------------
+function countBy1(x, n) {
+  var output = [];
+  for (var i=1; i<=n; i++) {
+    output.push(x * i);
+  }
+  return output;
+}
+
+console.log(countBy1(2,5)); //

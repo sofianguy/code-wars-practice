@@ -37,8 +37,19 @@ function seriesSum(n) {
   return sumSeries.toFixed(2);
 }
 
-console.log(seriesSum(0)); // 0.00
-console.log(seriesSum(1)); // 1.00
-console.log(seriesSum(2)); // 1.25
-console.log(seriesSum(3)); // 1.39
-console.log(seriesSum(5)); // 1.57
+console.log(seriesSum(0)); // "0.00"
+console.log(seriesSum(1)); // "1.00"
+console.log(seriesSum(2)); // "1.25"
+console.log(seriesSum(3)); // "1.39"
+console.log(seriesSum(5)); // "1.57"
+
+// ------------------------------------------------------------------------------
+function sumSeries1(n) {
+    var sum = 0;
+    for (var i=0; i<n; i++) {
+      sum += 1 / (3 * i + 1);
+    }
+    return sum.toFixed(2);
+}
+
+console.log(sumSeries1(5)); // "1.57"

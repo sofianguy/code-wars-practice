@@ -10,5 +10,17 @@
 // Output: The middle character(s) of the word represented as a string.
 
 function getMiddle(string) {
-  
+  var output = '';
+
+  if (string.length % 2 === 0) {
+    var temp = string.length / 2;
+    output = output + string[temp-1] + string[temp];
+  } else {
+    var temp = Math.round(string.length / 2);
+    output = output + string[temp-1];
+  }
+
+  return output;
 }
+console.log(getMiddle('test')); // 'es'
+console.log(getMiddle('testing')); // 't'

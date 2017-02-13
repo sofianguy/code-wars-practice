@@ -17,4 +17,13 @@ function filterList(list) {
   return output;
 }
 
-console.log(filterList([1,2,'a','b'])); //
+console.log(filterList([1,2,'a','b'])); // [ 1, 2 ]
+
+// ------------------------------------------------------------------------
+function filterList1(list) {
+  return list.filter(function (value) {
+    return typeof value === 'number';
+  });
+}
+
+console.log(filterList1([1,2,'aasf','1','123',123])); // [ 1, 2, 123 ]

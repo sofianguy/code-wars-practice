@@ -23,3 +23,19 @@ function basicOp(operation, value1, value2) {
 }
 
 console.log(basicOp('+', 4, 7)); // 11
+
+// ----------------------------------------------------------------------------
+function basicOp1(operation, value1, value2) {
+  switch (operation) {
+    case '+':
+      return value1 + value2;
+    case '-':
+      return value1 - value2;
+    case '*':
+      return value1 * value2;
+    case '/':
+      return value1 / value2;
+  }
+}
+
+console.log(basicOp1('+', 4, 7)); // 

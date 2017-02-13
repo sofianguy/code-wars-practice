@@ -38,4 +38,10 @@ function basicOp1(operation, value1, value2) {
   }
 }
 
-console.log(basicOp1('+', 4, 7)); // 
+console.log(basicOp1('+', 4, 7)); // 11
+
+// ----------------------------------------------------------------------------
+function basicOp2(operation, value1, value2) {
+    return eval(value1 + operation + value2);
+}
+console.log(basicOp2('+', 4, 7)); // 11

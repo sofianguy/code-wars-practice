@@ -13,4 +13,9 @@ function stringEnds(str, ends) {
     return false;
   }
 }
-console.log(stringEnds('abc', 'bc'));
+console.log(stringEnds('abc', 'bc'), true);
+console.log(stringEnds('abc', 'b'), false);
+console.log(stringEnds('', ''), true);
+console.log(stringEnds('', 'asdf'), false);
+console.log(stringEnds('aaa', 'aa'), true);
+console.log(stringEnds('asdf', ''), true);

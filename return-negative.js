@@ -22,3 +22,23 @@ function makeNegative(num) {
 console.log(makeNegative(1)); // -1
 console.log(makeNegative(-5)); // -5
 console.log(makeNegative(0)); // 0
+
+// ------------------------------------------------------------------------
+function makeNegative1(num) {
+  return -Math.abs(num);
+}
+console.log(makeNegative(1)); // -1
+console.log(makeNegative(-5)); // -5
+console.log(makeNegative(0)); // 0
+
+// ------------------------------------------------------------------------
+function makeNegative2(num) {
+  if (num < 0) {
+    return num;
+  } else {
+    return -num;
+  }
+}
+console.log(makeNegative(1)); // -1
+console.log(makeNegative(-5)); // -5
+console.log(makeNegative(0)); // 0

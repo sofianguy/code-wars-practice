@@ -32,3 +32,24 @@ function narcissistic(value) {
 console.log(narcissistic(153)); // true
 console.log(narcissistic(123)); // false
 console.log(narcissistic(1634)); // true
+
+// ----------------------------------------------------------------------------
+// given a number, return a list of numbers that are narcissistic up until given number
+function narcissistic1(number) {
+  var output = [];
+
+  for (var i=0; i<=number; i++) {
+    var numDigits = (i.toString()).length;
+    var digitsArray = (i.toString()).split('');
+    var digitsSum = 0;
+    for (var a=0; a<digitsArray.length; a++) {
+      digitsSum = digitsSum + Math.pow(parseInt(digitsArray[a]), numDigits);
+      if (digitsSum === i) {
+        output.push(i);
+      }
+    }
+  }
+  return output;
+}
+console.log(narcissistic1(153)); // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153 ]
+console.log(narcissistic1(1634)); // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 370, 371, 407, 1634 ]

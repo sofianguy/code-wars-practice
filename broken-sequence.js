@@ -41,4 +41,31 @@ console.log(findMissingNumber("1 3 2 5")); // 4
 console.log(findMissingNumber("1 2 3 4")); // 0
 console.log(findMissingNumber("1 5")); // 2
 console.log(findMissingNumber("2 1 4 3 a")); // 1
-console.log(findMissingNumber('')); //
+console.log(findMissingNumber('')); // 0
+
+// ---------------------------------------------------------------------------
+// Use Number() instead of parseInt()
+function findMissingNumber1(stringOfNums) {
+  if (stringOfNums.length === 0) {
+     return 0;
+  }
+
+  var arrNums = stringOfNums.split(' ').sort(function(a,b) {
+    return a - b;
+  });
+  var output = 0;
+
+  for (var i=0; i<arrNums.length; i++) {
+    if (Number(arrNums[i]) > output && Number(arrNums[i]) === (output+1)) {
+      output = Number(arrNums[i]);
+    } else if (!Number(arrNums[i])) {
+      return 1;
+    }
+  }
+
+  if (output === parseInt(arrNums.pop())) {
+    return 0;
+  } else {
+    return output + 1;
+  }
+}

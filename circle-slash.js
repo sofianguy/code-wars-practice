@@ -23,52 +23,24 @@
 // The index of the last person standing.
 
 function circleSlash(n) {
-
-  // creating array of range n
+  // create array of range n, starting at 1
   var peopleArray = [];  // [1,2,3,4,5]
   for (var i=1; i<=n; i++) {
     peopleArray.push(i);
   }
 
-  // for (var a=0; a<peopleArray.length; a++) {
-  //   if (peopleArray[a] % 2 === 0) {
-  //     peopleArray.splice(a,1);
-  //   }
-  // }
-  // console.log('removed even numbers: ', peopleArray);
-  var currentSword = 1;
+  var currentSword = 0;
   while (peopleArray.length > 1) {
-    peopleArray.splice(currentSword,1);
-    currentSword = currentSword + 1;
+    var isAtEnd = peopleArray.length-1 === currentSword;
+    if (isAtEnd) {
+      currentSword = 0;
+      peopleArray.splice(currentSword,1);
+    } else {
+      currentSword++;
+      peopleArray.splice(currentSword,1);
+    }
   }
-  //
-  // for (var b=0; b<peopleArray.length; b++) {
-  //   if (b === (peopleArray.length-2)) {
-  //     currentSword = peopleArray[0];
-  //     peopleArray.splice(currentSword, 1, 'dead');
-  //   }
-  //
-  //
-  //   console.log('index: ', b);
-  //   console.log('before splice: ', peopleArray);
-  //   peopleArray.splice(currentSword, 1, 'dead');
-  //   console.log('after splice: ', peopleArray);
-  //
-  //   var temp = peopleArray.indexOf('dead', b);
-  //   currentSword = peopleArray[temp + 1];
-  //   console.log('currentSword forloop: ', currentSword);
-  //
-  //   // if (currentSword === undefined) {
-  //   //   currentSword = peopleArray[0];
-  //   //   peopleArray.splice(currentSword, 1, 'dead');
-  //   // }
-  // }
-
-  // while (peopleArray.length > 1) {
-  //   peopleArray.splice(currentSword,1);
-  //   // console.log('while loop: ', peopleArray);
-  // }
-
-  return 'asdf';
+  return peopleArray[0];
 }
-console.log(circleSlash(5)); //
+// console.log(circleSlash(5)); // 3
+console.log(circleSlash(1e9)); //

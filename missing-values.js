@@ -24,16 +24,20 @@ function missingValues(arr) {
 
   var twiceNum = 0;
   var onceNum = 0;
-  var tempCount = 0;
+  var tempMatchCount = 0;
   for (var index=0; index<sortedArray.length; index++) {
     if (sortedArray[index] === sortedArray[index + 1]) {
-      tempCount = tempCount + 1; // tempCount++ or tempCount += 1
-    } else if (tempCount === 2) {
-      tempCount = 0;
-    } else if (tempCount === 1) {
-      tempCount = 0;
+      tempMatchCount = tempMatchCount + 1; // tempMatchCount++ or tempMatchCount += 1
+    } else if (tempMatchCount >= 2) {
+      // if next value of array doesn't match the current value and the tempMatchCount
+      // is more than 1 or 0, reset tempMatchCount back to 0;
+      tempMatchCount = 0;
+    } else if (tempMatchCount === 1) {
+      // if there's one match, that means the number appears twice
+      tempMatchCount = 0;
       twiceNum = sortedArray[index];
-    } else if (tempCount === 0) {
+    } else if (tempMatchCount === 0) {
+      // if there's no match, that means the number appears only once
       onceNum = sortedArray[index];
     }
   }
@@ -42,3 +46,5 @@ function missingValues(arr) {
 }
 console.log(missingValues([1, 1, 1, 2, 2, 3])); // 18
 console.log(missingValues([6, 5, 4, 100, 6, 5, 4, 100, 6, 5, 4, 200])); // 4000000
+console.log(missingValues([1,1,1,1,1,1,1,1,2,2,3])); // 18
+console.log(missingValues([1,2,2,3,3,3,3,3,3])); // 2

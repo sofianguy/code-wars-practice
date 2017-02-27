@@ -14,4 +14,15 @@ function repeatStr1(n, s) {
   return Array(n+1).join(s);
 }
 console.log(repeatStr1(6, "I")); // "IIIIII"
-console.log(repeatStr1(5, "Hello")); // "HelloHelloHelloHelloHell0"
+console.log(repeatStr1(5, "Hello")); // "HelloHelloHelloHelloHello"
+
+// ------------------------------------------------------------------
+function repeatStr2(n,s) {
+  var output = ''
+  for (var i=0; i<=n; i++) {
+    output = output + s;
+  }
+  return output;
+}
+console.log(repeatStr2(6, "I")); // "IIIIII"
+console.log(repeatStr2(5, "Hello")); // "HelloHelloHelloHelloHello"

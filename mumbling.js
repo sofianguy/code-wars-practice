@@ -14,3 +14,13 @@ function accum(s) {
 }
 console.log(accum("abcd")); // 'A-Bb-Ccc-Dddd'
 console.log(accum("RqaEzty")); // 'R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy'
+
+// ------------------------------------------------------------------------
+function accum1(s) {
+  var output = [];
+  for (var i=0; i<s.length; i++) {
+    output.push(s[i].toUpperCase() + Array(i-1).toLowerCase().join(s[i]));
+  }
+}
+console.log(accum("abcd")); // 'A-Bb-Ccc-Dddd'
+console.log(accum("RqaEzty")); // 'R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy'

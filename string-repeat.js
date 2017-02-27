@@ -8,3 +8,10 @@ function repeatStr(n, s) {
 }
 console.log(repeatStr(6, "I")); // "IIIIII"
 console.log(repeatStr(5, "Hello")); // "HelloHelloHelloHelloHello"
+
+// ------------------------------------------------------------------
+function repeatStr1(n, s) {
+  return Array(n+1).join(s);
+}
+console.log(repeatStr1(6, "I")); // "IIIIII"
+console.log(repeatStr1(5, "Hello")); // "HelloHelloHelloHelloHell0"

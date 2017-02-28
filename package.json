@@ -1,0 +1,23 @@
+{
+  "name": "codewars-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "averge-following-number.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofianguy/code-wars-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sofianguy/code-wars-practice/issues"
+  },
+  "homepage": "https://github.com/sofianguy/code-wars-practice#readme",
+  "dependencies": {
+    "tap": "^10.2.2"
+  }
+}

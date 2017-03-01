@@ -30,13 +30,16 @@ class UriBuilder {
     }
   }
 
+
   build() {
-    if (this.params.page && this.params.language) {
-      return this.url + '?page=' + encodeURI(this.params.page) + '&language=' + encodeURI(this.params.language);
-    } else if (this.params.language) {
-      return this.url + '?language=' + encodeURI(this.params.language);
-    } else if (this.params.page) {
-      return this.url + '?page=' + encodeURI(this.params.page);
+    if (Object.keys(this.params).length > 0) {
+      var arr = Object.keys(this.params);
+      var out = '?';
+      var temp = [];
+      for (var i=0; i<arr.length; i++) {
+        temp.push(arr[i]+ '=' + encodeURI(this.params[arr[i]]));
+      }
+      return this.url + out + temp.join('&');
     } else {
       return this.url;
     }
@@ -134,5 +137,13 @@ test('random', t => {
   out = out + temp.join('&')
 
   t.equal(out, '?page=1&language=javascript&animal=monkey&fruit=apples%20and%20bananas')
+  t.end();
+})
+
+test('seven', t => {
+  var builder7 = new UriBuilder('http://www.codewars.com');
+  builder7.params.page = 1
+  builder7.params.unknown = 'bananas'
+  t.equal(builder7.build(), "http://www.codewars.com?page=1&unknown=bananas");
   t.end();
 })

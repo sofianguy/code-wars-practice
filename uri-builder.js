@@ -32,11 +32,11 @@ class UriBuilder {
 
   build() {
     if (this.params.page && this.params.language) {
-      return this.url + '?page=' + this.params.page + '&language=' + this.params.language;
+      return this.url + '?page=' + encodeURI(this.params.page) + '&language=' + encodeURI(this.params.language);
     } else if (this.params.language) {
-      return this.url + '?language=' + this.params.language;
+      return this.url + '?language=' + encodeURI(this.params.language);
     } else if (this.params.page) {
-      return this.url + '?page=' + this.params.page;
+      return this.url + '?page=' + encodeURI(this.params.page);
     } else {
       return this.url;
     }
@@ -94,10 +94,45 @@ test('four', t => {
   t.end();
 })
 
-test('random', t => {
+test('five', t => {
   var builder5 = new UriBuilder('http://www.codewars.com');
-  var randomParamName = 't' + Date.now()
-  builder5.params[randomParamName] = 'test'
-  t.equal(builder5.build(), `http://www.codewars.com?${randomParamName}=test`);
+  builder5.params.language = 'ruby on rails'
+  t.equal(builder5.build(), "http://www.codewars.com?language=ruby%20on%20rails");
+  t.end();
+})
+
+test('six', t => {
+  var builder6 = new UriBuilder('http://www.codewars.com');
+  builder6.params.page = 'one hundred'
+  t.equal(builder6.build(), "http://www.codewars.com?page=one%20hundred");
+  t.end();
+})
+
+
+test('random', t => {
+  // var builder5 = new UriBuilder('http://www.codewars.com');
+  // var randomParamName = 't' + Date.now()
+  // builder5.params[randomParamName] = 'test'
+  // t.equal(builder5.build(), `http://www.codewars.com?${randomParamName}=test`);
+
+  var params = {
+    page: 1,
+    language: 'javascript',
+    animal: 'monkey',
+    fruit: 'apples and bananas'
+  }
+
+  var arr = Object.keys(params) // [ 'page', 'language' ]
+  console.log(params[arr[0]]); // 1
+  console.log(params[arr[1]]) // javascript
+  var out = '?'
+  // var out = '?' + arr[0] + '=' + params[arr[0]] + '&' + arr[1] + '=' + params[arr[1]]
+  var temp = []
+  for (var i=0; i<arr.length; i++) {
+    temp.push(arr[i] + '=' + encodeURI(params[arr[i]]))
+  }
+  out = out + temp.join('&')
+
+  t.equal(out, '?page=1&language=javascript&animal=monkey&fruit=apples%20and%20bananas')
   t.end();
 })

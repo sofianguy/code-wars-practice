@@ -25,11 +25,14 @@
 
 class UriBuilder {
   constructor(url) {
-    this.url = url;
-    this.params = {
+    var a = url.split('?');
+    if (a.length>1) {
+      this.url = a[0];
+    } else {
+      this.url = url;
     }
+    this.params = {};
   }
-
 
   build() {
     if (Object.keys(this.params).length > 0) {
@@ -145,5 +148,20 @@ test('seven', t => {
   builder7.params.page = 1
   builder7.params.unknown = 'bananas'
   t.equal(builder7.build(), "http://www.codewars.com?page=1&unknown=bananas");
+  t.end();
+})
+
+test('params { a:2, b:1 }', t => {
+  var builder8 = new UriBuilder('http://www.codewars.com');
+  builder8.params.a = 2;
+  builder8.params.b = 1;
+  t.equal(builder8.build(), "http://www.codewars.com?a=2&b=1");
+  t.end();
+})
+
+test('params { a:2, b:1 }', t => {
+  var builder9 = new UriBuilder('http://www.codewars.com?a=1');
+  builder9.params.a = 2;
+  t.equal(builder9.build(), "http://www.codewars.com?a=2");
   t.end();
 })

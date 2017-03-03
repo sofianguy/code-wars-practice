@@ -10,6 +10,10 @@
 // return "Thi1s is2 3a T4est"
 
 function order(words) {
+  if (words.length === 0) {
+    return '';
+  }
+  
   var wordsArray = words.split(' ');
   var output = [];
   for (var i=0; i<wordsArray.length; i++) {
@@ -18,6 +22,7 @@ function order(words) {
   }
   return output.join(' ');
 }
-console.log(order('is2'), '|||', 'is2');
-console.log(order('3a is2'), '|||', 'is2 3a');
+console.log(order('is2'), '|||', 'is2'); // ' is2'
+console.log(order('3a is2'), '|||', 'is2 3a'); // ' is2 3a'
 console.log(order('is2 Thi1s T4est 3a'), '|||', 'Thi1s is2 3a T4est');
+console.log(order(''), '|||', '');

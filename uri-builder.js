@@ -197,3 +197,14 @@ test('more params in given url', t => {
   t.equal(builder10.build(), "http://www.codewars.com?a=1&b=2&c=50&bananas=pineapple");
   t.end();
 })
+
+test('change given query param to new value', t => {
+  var builder10 = new UriBuilder('http://www.codewars.com?a=1&b=2&c=50&bananas=pineapple');
+  builder10.params.c = '30';
+  t.equal(builder10.params.a, '1');
+  t.equal(builder10.params.b, '2');
+  t.equal(builder10.params.c, '30');
+  t.equal(builder10.params.bananas, 'pineapple');
+  t.equal(builder10.build(), "http://www.codewars.com?a=1&b=2&c=30&bananas=pineapple");
+  t.end();
+})

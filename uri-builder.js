@@ -44,12 +44,11 @@ class UriBuilder {
   build() {
     if (Object.keys(this.params).length > 0) {
       var arr = Object.keys(this.params); // {a:1, b:2} ==> ['a', 'b']
-      var out = '?';
       var temp = [];
       for (var i=0; i<arr.length; i++) {
         temp.push(arr[i]+ '=' + encodeURI(this.params[arr[i]]));
       }
-      return this.url + out + temp.join('&');
+      return this.url + '?' + temp.join('&');
     } else {
       return this.url;
     }

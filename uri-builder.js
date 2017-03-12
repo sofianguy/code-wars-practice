@@ -25,14 +25,15 @@
 
 class UriBuilder {
   constructor(url) {
-    var a = url.split('?'); // ['www.codewars.com', 'a=1']
+    var a = url.split('?'); // ['www.codewars.com', 'a=1&b=2&c=3']
     if (a.length>1) {
-      var b = a[1].split('='); // ['a', '1']
+      var splitAnd = a[1].split('&'); // ['a=1','b=2','c=3']
       this.url = a[0];
       // fill in given params
       this.params = {};
-      for (var i=0; i<b.length; i++) {
-        this.params[b[0]] = b[1];
+      for (var i=0; i<splitAnd.length; i++) {
+        var [key, value] = splitAnd[i].split('='); // ['a', '1'] destructuring assignment
+        this.params[key] = value;
       }
     } else {
       this.url = url;
@@ -176,5 +177,23 @@ test('params = {} but includes param in given url', t => {
   var builder9 = new UriBuilder('http://www.codewars.com?a=1');
   t.equal(builder9.params.a, '1');
   t.equal(builder9.build(), "http://www.codewars.com?a=1");
+  t.end();
+})
+
+test('params = {} but includes more than one param in given url', t => {
+  var builder10 = new UriBuilder('http://www.codewars.com?a=1&b=2');
+  t.equal(builder10.params.a, '1');
+  t.equal(builder10.params.b, '2');
+  t.equal(builder10.build(), "http://www.codewars.com?a=1&b=2");
+  t.end();
+})
+
+test('more params in given url', t => {
+  var builder10 = new UriBuilder('http://www.codewars.com?a=1&b=2&c=50&bananas=pineapple');
+  t.equal(builder10.params.a, '1');
+  t.equal(builder10.params.b, '2');
+  t.equal(builder10.params.c, '50');
+  t.equal(builder10.params.bananas, 'pineapple');
+  t.equal(builder10.build(), "http://www.codewars.com?a=1&b=2&c=50&bananas=pineapple");
   t.end();
 })

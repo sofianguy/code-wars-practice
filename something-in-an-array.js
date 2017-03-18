@@ -13,5 +13,15 @@ function find(string, array) {
   }
   return false;
 }
-console.log(find("hello", ["bye bye","hello"]), true); //
-console.log(find("anything", ["bye bye","hello"]), false); //
+console.log(find("hello", ["bye bye","hello"]), true); // true
+console.log(find("anything", ["bye bye","hello"]), false); // false
+
+function find1(string, array) {
+  if (array.indexOf(string) === -1) {
+    return false;
+  } else if (array.indexOf(string) >= 0) {
+    return true;
+  }
+}
+console.log(find1("hello", ["bye bye","hello"]), true); // true
+console.log(find1("anything", ["bye bye","hello"]), false); // false

@@ -14,3 +14,9 @@ function findSmallestInt(args) {
 }
 console.log(findSmallestInt([34, 15, 88, 2]), 2);
 console.log(findSmallestInt([34, -345, -1, 100]), -345);
+
+function findSmallestInt1(args) {
+  return Math.min(...args);
+}
+console.log(findSmallestInt1([34, 15, 88, 2]), 2);
+console.log(findSmallestInt1([34, -345, -1, 100]), -345);

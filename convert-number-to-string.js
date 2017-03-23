@@ -15,3 +15,9 @@ function numberToString1(num) {
 }
 console.log(numberToString1(123), '123');
 console.log(numberToString1(999), '999');
+
+function numberToString2(num) {
+  return String(num);
+}
+console.log(numberToString2(123), '123');
+console.log(numberToString2(999), '999');

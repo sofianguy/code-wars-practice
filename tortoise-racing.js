@@ -17,25 +17,34 @@
 // race(80, 91, 37) => [3, 21, 49]
 
 function raceHours(v1, v2, g) {
-  var hours = 0;
+  var seconds = 0;
   var turtleA = g;
   var turtleB = 0;
 
   while (turtleB < turtleA) {
-    hours++; // hour
+    seconds = seconds + 3600; // hour
     turtleA = turtleA + v1;
     turtleB = turtleB + v2;
   }
-  return hours;
+  return seconds;
+}
+
+function convertSeconds(seconds) {
+  // return hours,minutes,seconds
 }
 
 var {test} = require('tap');
-test('1 - v2 should catch up in 1 hour', t => {
-  t.deepEqual(raceHours(80, 160, 80), 1);
+test('1 - v2 should catch up in 3600 seconds (1 hour)', t => {
+  t.equal(raceHours(80, 160, 80), 3600);
   t.end();
 });
 
-test('2 - v2 should catch up in 2 hours', t => {
-  t.deepEqual(raceHours(80, 160, 120), 2);
+test('2 - v2 should catch up in 7200 seconds (2 hours)', t => {
+  t.equal(raceHours(80, 160, 120), 7200);
   t.end();
 });
+
+// test('3 - v2 should catch up in 1.5 hours', t => {
+//   t.equal(raceHours(80, 160, ), 1.5);
+//   t.end();
+// });

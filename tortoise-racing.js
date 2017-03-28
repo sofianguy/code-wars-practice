@@ -20,6 +20,7 @@ function race(v1, v2, g) {
   var output = [0,0,0];
   var turtleA = g;
   var turtleB = 0;
+
   while (turtleB < turtleA) {
     output[0]++; // hour
     turtleA = turtleA + v1;
@@ -31,5 +32,10 @@ function race(v1, v2, g) {
 var {test} = require('tap');
 test('1 - v2 should catch up in 1 hour', t => {
   t.deepEqual(race(80, 160, 80), [1, 0, 0]);
+  t.end();
+});
+
+test('2 - v2 should catch up in 2 hours', t => {
+  t.deepEqual(race(80, 160, 120), [2, 0, 0]);
   t.end();
 });

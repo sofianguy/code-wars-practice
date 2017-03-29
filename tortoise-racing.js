@@ -16,56 +16,29 @@
 // race(720, 850, 70) => [0, 32, 18]
 // race(80, 91, 37) => [3, 21, 49]
 
-function raceHours(v1, v2, g) {
-  var seconds = 0;
-  var turtleA = g; // starting point turtleA
-  var turtleB = 0; // starting point turtleB
+function race(v1, v2, g) {
+  var time = g / (v2 - v1) * 3600;
 
-  while (turtleB <= turtleA) {
-    seconds++;
-    turtleA = turtleA + (v1/3600);
-    turtleB = turtleB + (v2/3600);
-  }
-  return seconds;
-}
-
-function convertSeconds(givenSeconds) {
-  var minutes = Math.floor(givenSeconds / 60);
+  var minutes = Math.floor(time / 60);
+  var seconds = Math.floor(((time/60) - minutes) * 60);
   var hours = Math.floor(minutes / 60);
   minutes = minutes - (hours*60);
-  var seconds = minutes % 60;
 
   return [hours, minutes, seconds];
 }
 
 var {test} = require('tap');
 test('1 - v2 should catch up in 3600 seconds (1 hour)', t => {
-  t.equal(raceHours(80, 160, 80), 3600);
+  t.deepEquals(race(80, 160, 80), [1,0,0]);
   t.end();
 });
 
 test('2 - v2 should catch up in 5400 seconds (1.5 hours)', t => {
-  t.equal(raceHours(80, 160, 120), 5400);
+  t.deepEquals(race(80, 160, 120), [1,30,0]);
   t.end();
 });
 
-
-function race(v1, v2, g) {
-  var totalSeconds = 0;
-  var turtleA = g; // starting point turtleA
-  var turtleB = 0; // starting point turtleB
-
-  while (turtleA > turtleB) {
-      totalSeconds++;
-      turtleA = turtleA + (v1/3600);
-      turtleB = turtleB + (v2/3600);
-  }
-  var minutes = Math.floor(totalSeconds / 60);
-  var seconds = ((totalSeconds/60) - minutes) * 60;
-  var hours = Math.floor(minutes / 60);
-  minutes = minutes - (hours*60);
-
-  return [hours, minutes, seconds];
-}
-
-console.log(race(720, 850, 70), [0, 32, 18]);
+test('v1: 720 v2:  850 g:  70', t => {
+  t.deepEquals(race(720, 850, 70), [0, 32, 18])
+  t.end()
+});

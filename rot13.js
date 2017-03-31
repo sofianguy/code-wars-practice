@@ -80,3 +80,8 @@ test('5 - uppercase, lowercase, numbers, punctuation, spaces', t => {
   t.equals(rot13('10+2 is twelve.'), '10+2 vf gjryir.');
   t.end();
 });
+
+test('6 - test for encrypted word to decrypted word', t => {
+  t.equals(rot13('Pbqrjnef'), 'Codewars');
+  t.end();
+});

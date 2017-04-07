@@ -42,3 +42,13 @@ test('v1: 720 v2:  850 g:  70', t => {
   t.deepEquals(race(720, 850, 70), [0, 32, 18])
   t.end()
 });
+
+test('v1: 820 v2:  81 g:  550', t => {
+  t.deepEquals(race(820, 81, 550), null);
+  t.end();
+});
+
+test('v1: 660 v2: 705 g: 143', t => {
+  t.deepEquals(race(660, 705, 143), [3, 10, 40]);
+  t.end();
+});

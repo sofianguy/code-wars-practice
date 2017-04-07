@@ -1,7 +1,7 @@
 // Count the number of Duplicates
-// Write a function that will return the count of distinct case-insensitive 
-// alphabetic characters and numeric digits that occur more than once in the input 
-// string. The input string can be assumed to contain only alphanumeric characters, 
+// Write a function that will return the count of distinct case-insensitive
+// alphabetic characters and numeric digits that occur more than once in the input
+// string. The input string can be assumed to contain only alphanumeric characters,
 // including digits, uppercase and lowercase alphabets.
 // Example:
 // "abcde" -> 0 # no characters repeats more than once
@@ -12,20 +12,21 @@
 // "aa11" -> 2 # 'a' and '1'
 
 function duplicateCount(text) {
-	var textArray = text.split('');
-	console.log('textArray: ', textArray)
-	var dupCount = 0;
+	var textArray = text.toLowerCase().split('');
+	var dupCount = {};
 
 	for (var i=0; i<textArray.length; i++) {
-		if (textArray[i])
+		if (textArray[i]) {
+			dupCount[textArray[i]] = ++;
+		}
 	}
 
-	
+	return
 }
 
 console.log(duplicateCount('abcde')); //
-console.log(duplicateCount('aabbcde')); // 
+console.log(duplicateCount('aabbcde')); //
 console.log(duplicateCount('aabbcdeB')); //
-console.log(duplicateCount('indivisibility')); // 
+console.log(duplicateCount('indivisibility')); //
 console.log(duplicateCount('Indivisibilities')); //
-console.log(duplicateCount('aa11')); // 
+console.log(duplicateCount('aa11')); //

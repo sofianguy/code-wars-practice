@@ -10,7 +10,11 @@ function reverse(string) {
   for (var i=stringArr.length-1; i>=0; i--) {
     output.push(stringArr[i]);
   }
-  console.log(output);
   return output.join(' ');
 }
 console.log(reverse('Hello World'), '|', 'World Hello');
+
+function reverse1(string) {
+  return string.split(' ').reverse().join(' ');
+}
+console.log(reverse1('Hello World'), '|', 'World Hello');

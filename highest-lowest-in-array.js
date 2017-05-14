@@ -34,3 +34,12 @@ function minMax(arr) {
 }
 console.log(minMax([1,2,3,4,5]), [1,5]);
 console.log(minMax([2334454,5]), [5,2334454]);
+
+function minMax1(arr) {
+  var sortedArr = arr.sort(function(a,b) {
+    return a-b;
+  });
+  return [sortedArr[0], sortedArr[sortedArr.length-1]];
+}
+console.log(minMax1([1,2,3,4,5]), [1,5]);
+console.log(minMax1([2334454,5]), [5,2334454]);

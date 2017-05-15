@@ -28,3 +28,12 @@ console.log(arithmetic(1, 2, "add"), 3);
 console.log(arithmetic(8, 2, "subtract"), 6);
 console.log(arithmetic(5, 2, "multiply"), 10);
 console.log(arithmetic(8, 2, "divide"), 4);
+
+function arithmetic1(a,b,operator) {
+  var operations = {'add': '+', 'subtract': '-', 'multiply': '*', 'divide': '/'};
+  return eval(a + operations[operator] + b);
+}
+console.log(arithmetic1(1, 2, "add"), 3);
+console.log(arithmetic1(8, 2, "subtract"), 6);
+console.log(arithmetic1(5, 2, "multiply"), 10);
+console.log(arithmetic1(8, 2, "divide"), 4);
